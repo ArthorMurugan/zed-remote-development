@@ -1,6 +1,7 @@
-.PHONY: all wasm agent install-agent setup test clean
+.PHONY: all wasm agent install install-agent uninstall install-release uninstall-release setup test clean
 
 WASM_TARGET ?= wasm32-wasip2
+RELEASE_REPOSITORY ?= ArthorMurugan/zed-remote-development
 
 all: wasm agent
 
@@ -13,6 +14,16 @@ agent:
 
 install-agent:
 	cargo install --locked --path zrd --force
+
+install: install-release
+
+install-release:
+	RELEASE_REPOSITORY=$(RELEASE_REPOSITORY) bash scripts/install-linux.sh
+
+uninstall: uninstall-release
+
+uninstall-release:
+	bash scripts/uninstall-linux.sh
 
 setup: wasm install-agent
 	@printf '\nBuild and native-agent installation complete.\n'

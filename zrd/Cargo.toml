@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 license = "MIT"
 description = "Native agent for the Zed Remote Development extension: connects machines, discovers development environments, and hands off to Zed."
-repository = "https://example.com/zed-remote-development"
+repository = "https://github.com/ArthorMurugan/zed-remote-development"
 
 [dependencies]
 anyhow = "1"
