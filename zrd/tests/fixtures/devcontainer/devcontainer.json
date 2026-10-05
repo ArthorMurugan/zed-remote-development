@@ -1,0 +1,8 @@
+{
+  // API service dev container
+  "name": "api",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "workspaceFolder": "/workspace/api",
+  "postStartCommand": "pnpm install",
+  "forwardPorts": [3000]
+}

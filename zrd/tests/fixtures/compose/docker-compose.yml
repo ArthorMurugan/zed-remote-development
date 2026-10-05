@@ -1,0 +1,8 @@
+services:
+  worker:
+    build: .
+    working_dir: /app
+    volumes:
+      - .:/app
+  redis:
+    image: redis:7

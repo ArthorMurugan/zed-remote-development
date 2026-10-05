@@ -1,0 +1,16 @@
+name: my-project
+services:
+  api:
+    image: node:20
+    working_dir: /workspace/api
+    volumes:
+      - ./api:/workspace/api
+    ports:
+      - "3000:3000"
+  frontend:
+    image: node:20
+    working_dir: /workspace/frontend
+    volumes:
+      - ./frontend:/workspace/frontend
+  db:
+    image: postgres:16

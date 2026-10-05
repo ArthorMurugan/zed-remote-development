@@ -1,0 +1,37 @@
+id = "zed-remote-development"
+name = "Zed Remote Development"
+version = "0.1.0"
+schema_version = 1
+authors = ["Zed Remote Development contributors"]
+description = "The easiest way to start development inside a remote environment from Zed. Connect to a machine, pick a development environment, and Zed opens it."
+repository = "https://example.com/zed-remote-development"
+
+# The extension is a thin WASM front-end: all real work is delegated to the
+# `zrd` native agent, which is the only process it ever executes.
+capabilities = [
+    { kind = "process:exec", command = "zrd", args = ["**"] },
+]
+
+[slash_commands.remote-connect]
+description = "Remote Development: Connect — pick a machine, discover its development environments"
+requires_argument = false
+
+[slash_commands.remote-open]
+description = "Remote Development: Open Environment — start the environment if needed and open it in Zed"
+requires_argument = false
+
+[slash_commands.remote-reopen]
+description = "Remote Development: Reopen in Environment — reconnect to your most recent session"
+requires_argument = false
+
+[slash_commands.remote-add]
+description = "Remote Development: Add Machine — register a machine by address (user@host)"
+requires_argument = true
+
+[slash_commands.remote-logs]
+description = "Remote Development: Show Logs — recent logs for a development environment"
+requires_argument = false
+
+[slash_commands.remote-diagnose]
+description = "Remote Development: Diagnose — inspect SSH, Docker and Zed connectivity for a machine"
+requires_argument = false
